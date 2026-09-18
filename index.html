@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ED1C24">
+<title>Ooredoo Qatar — Home</title>
+
+<!-- Amplitude unified smart loader (Analytics + Session Replay + Web Experiment)
+     followed by the engagement script (Guides & Surveys). CDN only — never npm. -->
+<script src="https://cdn.amplitude.com/script/0d135cb349890f3715863642f065bcbd.js"></script>
+<script src="https://cdn.amplitude.com/script/0d135cb349890f3715863642f065bcbd.engagement.js"></script>
+
+<script>
+/* ------------------------------------------------------------------------
+   SPA base-path bootstrap for GitHub Pages.
+
+   This file is copied VERBATIM to 404.html. GitHub Pages serves 404.html at
+   the deep-linked path (e.g. /ooredoo-demo/plans/shahry_60), so the browser's
+   location is already correct — we only have to work out which leading part
+   of the path is the repository base and which part is the app route.
+
+   Result: the same files work at
+     https://khaledismail-sandbox.github.io/ooredoo-demo/...   (base = /ooredoo-demo)
+     http://localhost:PORT/ooredoo-demo/...                    (base = /ooredoo-demo)
+     http://localhost:PORT/...                                 (base = '')
+   ------------------------------------------------------------------------ */
+(function () {
+  var ROUTES = [
+    // longest-first, so '/plans/confirmation' wins over '/plans'
+    '/plans/confirmation', '/plans/recommended', '/usage/breakdown', '/plans/upgrade',
+    '/nojoom', '/search', '/plans', '/usage', '/login', '/help', '/bill', '/more'
+  ];
+  var p = location.pathname.replace(/\/(index|404)\.html$/, '');
+  if (p.length > 1 && p.charAt(p.length - 1) === '/') p = p.slice(0, -1);
+
+  var base = p;
+  var matched = false;
+  for (var i = 0; i < ROUTES.length; i++) {
+    var r = ROUTES[i];
+    if (p === r || p.slice(-r.length) === r) { base = p.slice(0, p.length - r.length); matched = true; break; }
+  }
+  if (!matched) {
+    // dynamic plan-detail deep link: /<base>/plans/<planId>
+    var dyn = p.match(/^(.*)\/plans\/[A-Za-z0-9_-]+$/);
+    if (dyn) { base = dyn[1]; }
+  }
+  if (base.charAt(base.length - 1) === '/') base = base.slice(0, -1);
+
+  window.__BASE__ = base;
+  document.write('<link rel="stylesheet" href="' + base + '/assets/css/app.css">');
+})();
+</script>
+</head>
+<body>
+  <div class="stage">
+    <div class="phone" id="phone">
+      <div class="dev-banner" id="dev-banner" hidden></div>
+      <div class="statusbar">
+        <span>9:41</span>
+        <span class="sb-right" id="sb-right"></span>
+      </div>
+      <div class="screen" id="screen"></div>
+      <nav class="tabbar hidden" id="tabbar"></nav>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    var b = window.__BASE__ || '';
+    var files = ['core.js', 'analytics.js', 'ui.js', 'views.js', 'boot.js'];
+    for (var i = 0; i < files.length; i++) {
+      document.write('<script src="' + b + '/assets/js/' + files[i] + '"><\/script>');
+    }
+  })();
+  </script>
+</body>
+</html>
