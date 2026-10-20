@@ -29,7 +29,7 @@
 
     COUNTRY: 'Qatar',
     CURRENCY: 'QAR',
-    SUPPORT_LINE: '111',
+    SUPPORT_LINE: '800 100',
     PROMO_CODE: 'OOREDOO10',
     PROMO_PCT: 10,
     BASE: window.__BASE__ || ''
@@ -97,7 +97,7 @@
       months_over_quota: 0,
       overage_charge_qar: 0,
       quota_exceeded: false,
-      current_plan_name: 'Shahry 40 GB',
+      current_plan_name: 'Monthly 40 GB',
       current_plan_id: 'shahry_40',
       current_plan_gb: 40,
       current_plan_qar: 175,
@@ -123,7 +123,7 @@
       months_over_quota: 2,
       overage_charge_qar: 45,
       quota_exceeded: true,
-      current_plan_name: 'Shahry Legacy 30 GB',
+      current_plan_name: 'Legacy 30 GB',
       current_plan_id: 'shahry_legacy_30',
       current_plan_gb: 30,
       current_plan_qar: 175,
@@ -144,25 +144,25 @@
   OOD.PLANS = [
     {
       id: 'data_add_on_20',
-      name: 'Shahry Data Add-On 20 GB',
+      name: 'Data Add-On 20 GB',
       family: 'data_add_on',
       family_label: 'Data Add-On',
       gb: 20,
       qar: 125,
       gb_copy: '20 GB local data per month.',
-      minutes: 'Unlimited Ooredoo-to-Ooredoo minutes',
+      minutes: 'Unlimited on-net minutes',
       inclusions: [
         '20 GB local data, renews monthly',
-        'Unlimited Ooredoo-to-Ooredoo minutes',
+        'Unlimited on-net minutes',
         '300 local flexible minutes + 300 SMS',
-        'Nojoom points on every bill'
+        'reward points on every bill'
       ]
     },
     {
       id: 'shahry_40',
-      name: 'Shahry 40 GB',
+      name: 'Monthly 40 GB',
       family: 'shahry_postpaid',
-      family_label: 'Shahry',
+      family_label: 'Monthly',
       gb: 40,
       qar: 175,
       gb_copy: '40 GB local data per month.',
@@ -170,16 +170,16 @@
       inclusions: [
         '40 GB local data, renews monthly',
         '800 local flexible minutes + 500 SMS',
-        'Unlimited Ooredoo-to-Ooredoo minutes',
-        'Ooredoo TV Lite included',
-        'Nojoom points on every bill'
+        'Unlimited on-net minutes',
+        'TV+ Lite included',
+        'reward points on every bill'
       ]
     },
     {
       id: 'shahry_60',
-      name: 'Shahry 60 GB',
+      name: 'Monthly 60 GB',
       family: 'shahry_postpaid',
-      family_label: 'Shahry',
+      family_label: 'Monthly',
       gb: 60,
       qar: 220,
       gb_copy: '60 GB local data per month.',
@@ -187,17 +187,17 @@
       inclusions: [
         '60 GB local data, renews monthly',
         '1,200 local flexible minutes + 1,000 SMS',
-        'Unlimited Ooredoo-to-Ooredoo minutes',
+        'Unlimited on-net minutes',
         '5 GB GCC roaming data',
-        'Ooredoo TV Lite included',
-        'Double Nojoom points for 6 months'
+        'TV+ Lite included',
+        'Double reward points for 6 months'
       ]
     },
     {
       id: 'qatarna_plus_100',
-      name: 'Qatarna+ 100 GB',
+      name: 'Plus 100 GB',
       family: 'qatarna_plus',
-      family_label: 'Qatarna+',
+      family_label: 'Plus',
       gb: 100,
       qar: 300,
       gb_copy: '100 GB local data per month.',
@@ -207,30 +207,30 @@
         'Unlimited local minutes + unlimited SMS',
         '10 GB GCC roaming data',
         '200 international minutes',
-        'Ooredoo TV Standard included',
-        'Priority Nojoom tier progress'
+        'TV+ Standard included',
+        'Priority rewards tier progress'
       ]
     },
     {
       id: 'home_plus_250',
-      name: 'Shahry Home+ 250 GB Bundle',
+      name: 'Home+ 250 GB Bundle',
       family: 'home_plus_bundle',
       family_label: 'Home+',
       gb: 250,
       qar: 380,
-      gb_copy: '250 GB shared between mobile and Ooredoo Fibre.',
+      gb_copy: '250 GB shared between mobile and Home Fibre.',
       minutes: 'Unlimited local minutes',
       inclusions: [
-        '250 GB shared mobile + Ooredoo Fibre data',
+        '250 GB shared mobile + Home Fibre data',
         'Unlimited local minutes + unlimited SMS',
-        'Ooredoo Fibre 300 Mbps at home',
-        'Ooredoo TV Entertainment included',
+        'Home Fibre 300 Mbps at home',
+        'TV+ Entertainment included',
         '15 GB GCC roaming data'
       ]
     },
     {
       id: 'family_share_300',
-      name: 'Shahry Family Share 300 GB',
+      name: 'Family Share 300 GB',
       family: 'family_share',
       family_label: 'Family Share',
       gb: 300,
@@ -242,16 +242,16 @@
         'Unlimited local minutes + SMS on every SIM',
         '4 extra SIMs at no monthly charge',
         '20 GB GCC roaming data pooled',
-        'Ooredoo TV Entertainment included',
-        'Family Nojoom points pooling'
+        'TV+ Entertainment included',
+        'Family reward points pooling'
       ]
     }
   ];
 
   OOD.FAMILIES = [
     { key: 'all', label: 'All plans' },
-    { key: 'shahry_postpaid', label: 'Shahry' },
-    { key: 'qatarna_plus', label: 'Qatarna+' },
+    { key: 'shahry_postpaid', label: 'Monthly' },
+    { key: 'qatarna_plus', label: 'Plus' },
     { key: 'data_add_on', label: 'Data Add-On' },
     { key: 'home_plus_bundle', label: 'Home+' },
     { key: 'family_share', label: 'Family Share' }
@@ -273,7 +273,7 @@
     { app: 'WhatsApp', gb: 1.6, colour: '#1EA65A', initial: 'WA' },
     { app: 'Snapchat', gb: 1.1, colour: '#E3B900', initial: 'SC' },
     { app: 'Safari & Chrome', gb: 0.8, colour: '#2B6CE8', initial: 'WB' },
-    { app: 'Ooredoo TV', gb: 0.4, colour: '#ED1C24', initial: 'OO' },
+    { app: 'TV+', gb: 0.4, colour: '#ED1C24', initial: 'OO' },
     { app: 'Other apps', gb: 0.2, colour: '#8A9099', initial: '••' }
   ];
 
@@ -287,18 +287,18 @@
     { app: 'WhatsApp', gb: 2.4, colour: '#1EA65A', initial: 'WA' },
     { app: 'Snapchat', gb: 1.9, colour: '#E3B900', initial: 'SC' },
     { app: 'Safari & Chrome', gb: 1.5, colour: '#2B6CE8', initial: 'WB' },
-    { app: 'Ooredoo TV', gb: 0.8, colour: '#ED1C24', initial: 'OO' },
+    { app: 'TV+', gb: 0.8, colour: '#ED1C24', initial: 'OO' },
     { app: 'Other apps', gb: 0.4, colour: '#8A9099', initial: '••' }
   ];
 
   OOD.HELP_ARTICLES = [
     {
       id: 'help_data_usage',
-      title: 'How is my data usage measured on Shahry?',
+      title: 'How is my data usage measured on my plan?',
       cat: 'Data usage',
       mins: 3,
       body: [
-        'Your Shahry data allowance renews on your bill date. Usage is metered in real time across 4G and 5G, and every megabyte you consume in Qatar counts against your local data allowance.',
+        'Your monthly data allowance renews on your bill date. Usage is metered in real time across 4G and 5G, and every megabyte you consume in Qatar counts against your local data allowance.',
         'Data used while roaming outside Qatar is metered separately against your GCC or international roaming add-on, so it never touches your local allowance.',
         'When you pass your monthly allowance, out-of-bundle data is charged per GB and appears on your bill as a separate data overage line. Postpaid lines are never disconnected for going over — the charge simply lands on the next bill.'
       ]
@@ -310,19 +310,19 @@
       mins: 2,
       body: [
         'A data overage charge appears when your local data usage passes the allowance included in your plan during a billing cycle.',
-        'If you go over in two or more months out of three, moving to a plan with a larger allowance is almost always cheaper than paying out-of-bundle rates. Compare plans under Plans, or call ' + '111' + ' and ask for a usage review.',
+        'If you go over in two or more months out of three, moving to a plan with a larger allowance is almost always cheaper than paying out-of-bundle rates. Compare plans under Plans, or call 800 100 and ask for a usage review.',
         'Overage charges are billed in the cycle in which they occur and are shown separately from your monthly plan charge.'
       ]
     },
     {
       id: 'help_plan_change',
-      title: 'Changing your plan: what happens to my bill and Nojoom points?',
+      title: 'Changing your plan: what happens to my bill and reward points?',
       cat: 'Plans',
       mins: 4,
       body: [
-        'You can move to a higher Shahry, Qatarna+ or Home+ plan at any time from the app. There is no activation fee for an in-app upgrade, and Qatar applies no tax on mobile plan charges.',
+        'You can move to a higher Monthly, Plus or Home+ plan at any time from the app. There is no activation fee for an in-app upgrade, and Qatar applies no tax on mobile plan charges.',
         'The new monthly charge starts from your next bill date. Any unused allowance from the current cycle is not carried over.',
-        'Your Nojoom points balance is never reset by a plan change, and higher plans earn points faster. Hala prepaid customers who move to a Shahry postpaid plan keep their Nojoom balance too.'
+        'Your reward points balance is never reset by a plan change, and higher plans earn points faster. Prepaid customers who move to a Monthly postpaid plan keep their rewards balance too.'
       ]
     }
   ];
@@ -505,9 +505,9 @@
 
   /* The consumption-based line rendered on treatment plan cards (and on the
      standalone showcase page). Built entirely from the hardcoded profile.
-     For Persona B + Shahry 60 GB this renders exactly:
+     For Persona B + Monthly 60 GB this renders exactly:
        "Based on your last 3 months (avg 38 GB, over quota in 2 of 3),
-        Shahry 60 GB fits your usage and would have saved you QAR 45/month." */
+        Monthly 60 GB fits your usage and would have saved you QAR 45/month." */
   OOD.recoLine = function (persona, plan) {
     var head = 'Based on your last 3 months (avg ' + persona.avg_monthly_gb +
                ' GB, over quota in ' + persona.months_over_quota + ' of 3), ' +

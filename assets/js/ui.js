@@ -173,7 +173,7 @@
   var TABS = [
     { key: 'home',   label: 'Home',   icon: 'home',   route: '/' },
     { key: 'plans',  label: 'Plans',  icon: 'plans',  route: '/plans' },
-    { key: 'nojoom', label: 'Nojoom', icon: 'gift',   route: '/nojoom', centre: true },
+    { key: 'nojoom', label: 'Rewards', icon: 'gift',   route: '/nojoom', centre: true },
     { key: 'bill',   label: 'Bill',   icon: 'bill',   route: '/bill' },
     { key: 'more',   label: 'More',   icon: 'person', route: '/more' }
   ];
@@ -224,13 +224,13 @@
       '<div class="support-strip">' +
         '<span class="icon-tile">' + ui.icon('call', 20) + '</span>' +
         '<span class="txt"><div class="t1">Need help with your plan?</div>' +
-        '<div class="t2">Call Ooredoo Care, free from your mobile</div></span>' +
-        '<span class="num">111</span>' +
+        '<div class="t2">Call Customer Care, free from your mobile</div></span>' +
+        '<span class="num">' + OOD.CONFIG.SUPPORT_LINE + '</span>' +
       '</div>';
   };
 
   ui.nojoomRibbon = function (persona) {
-    return '<div class="nojoom-ribbon">You are a <b>Nojoom ' + esc(persona.nojoom_label) +
+    return '<div class="nojoom-ribbon">You are a <b>Rewards ' + esc(persona.nojoom_label) +
            '</b> member &nbsp;&#183;&nbsp; ' + Number(persona.nojoom_points).toLocaleString('en-US') +
            ' points</div>';
   };

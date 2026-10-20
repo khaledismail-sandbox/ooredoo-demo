@@ -38,8 +38,8 @@
       html += '<div class="pad" style="margin-top:6px">' +
         '<div class="card card-pad">' +
           '<h2 class="card-title">Log in to manage your line</h2>' +
-          '<p class="card-sub">See your data, calls and Nojoom points, pay your bill and ' +
-          'change your Shahry plan in a couple of taps.</p>' +
+          '<p class="card-sub">See your data, calls and reward points, pay your bill and ' +
+          'change your plan in a couple of taps.</p>' +
           '<div style="margin-top:14px"><button class="btn btn-primary" data-act="go" data-route="/login">' +
           'Log in</button></div>' +
         '</div>' +
@@ -122,8 +122,8 @@
     html += '<div class="section-title">Quick links</div>' +
       '<div class="pad"><div class="rows">' +
         row('data', 'My Usage', 'Data, calls and SMS for this cycle', 'go', { route: '/usage' }) +
-        row('search', 'Search plans', 'Find a Shahry, Qatarna+ or Home+ plan', 'go', { route: '/search' }) +
-        row('gift', 'Nojoom rewards', 'Points balance, tier and redemptions', 'go', { route: '/nojoom' }) +
+        row('search', 'Search plans', 'Find a Monthly, Plus or Home+ plan', 'go', { route: '/search' }) +
+        row('gift', 'Rewards', 'Points balance, tier and redemptions', 'go', { route: '/nojoom' }) +
         row('help', 'Help &amp; support', 'Data usage, billing and plan changes', 'go', { route: '/help' }) +
       '</div></div>';
 
@@ -146,17 +146,17 @@
   }
 
   function renderOffers() {
-    return '<div class="section-title">Ooredoo offers</div>' +
+    return '<div class="section-title">Offers for you</div>' +
       '<div class="offer-strip">' +
-        '<div class="offer-tile red"><span class="ot-tag">Shahry</span>' +
+        '<div class="offer-tile red"><span class="ot-tag">Monthly</span>' +
           '<h4>Double your data for 3 months</h4>' +
-          '<p>Move up a Shahry tier and get double data on us.</p></div>' +
-        '<div class="offer-tile dark"><span class="ot-tag">Nojoom</span>' +
+          '<p>Move up a plan tier and get double data on us.</p></div>' +
+        '<div class="offer-tile dark"><span class="ot-tag">Rewards</span>' +
           '<h4>Pay your bill with points</h4>' +
-          '<p>Redeem Nojoom points against any Ooredoo bill.</p></div>' +
-        '<div class="offer-tile teal"><span class="ot-tag">Hala</span>' +
-          '<h4>Hala to Shahry in minutes</h4>' +
-          '<p>Keep your number and your Nojoom balance.</p></div>' +
+          '<p>Redeem reward points against any bill.</p></div>' +
+        '<div class="offer-tile teal"><span class="ot-tag">Prepaid</span>' +
+          '<h4>Prepaid to Monthly in minutes</h4>' +
+          '<p>Keep your number and your rewards balance.</p></div>' +
       '</div>';
   }
 
@@ -175,7 +175,7 @@
         '<div class="login-hero">' +
           ui.brand(34, 26) +
           '<h1>Log in to Gen App</h1>' +
-          '<p>Manage your Shahry line, check your usage and redeem Nojoom points.</p>' +
+          '<p>Manage your mobile line, check your usage and redeem reward points.</p>' +
         '</div>' +
         '<div class="field">' +
           '<label for="li-name">Name</label>' +
@@ -259,14 +259,14 @@
       '<div class="card">' +
         '<div class="bill-line"><span class="k">Local calls &amp; SMS used</span>' +
           '<span class="v">' + p.voice_units_used + ' of ' + p.voice_units_total + ' units</span></div>' +
-        '<div class="bill-line"><span class="k">Ooredoo-to-Ooredoo minutes</span>' +
+        '<div class="bill-line"><span class="k">on-net minutes</span>' +
           '<span class="v">Unlimited</span></div>' +
         '<div class="bill-line"><span class="k">GCC roaming data used</span>' +
           '<span class="v">0.0 GB</span></div>' +
       '</div>' +
 
       '<div class="rows">' +
-        row('plans', 'Compare plans', 'See Shahry, Qatarna+ and Home+ options', 'go', { route: '/plans' }) +
+        row('plans', 'Compare plans', 'See Monthly, Plus and Home+ options', 'go', { route: '/plans' }) +
         row('bill', 'My Bill', 'Charges for ' + OOD.billPeriod(), 'go', { route: '/bill' }) +
       '</div>' +
 
@@ -291,7 +291,7 @@
           '<span>Streaming and social video are the biggest consumers on your line. ' +
           'Setting video quality to Standard in those apps typically cuts data use by a third.</span></div>' +
         '<div class="rows">' +
-          row('plans', 'Find a plan that fits this usage', 'Compare Shahry and Qatarna+ allowances', 'go', { route: '/plans' }) +
+          row('plans', 'Find a plan that fits this usage', 'Compare Monthly and Plus allowances', 'go', { route: '/plans' }) +
         '</div>' +
       '</div><div class="bottom-space"></div>';
   }
@@ -487,7 +487,7 @@
         '</div>' +
         '<div class="card card-pad">' +
           '<h3 class="card-title" style="font-size:14.5px">Promo code</h3>' +
-          '<p class="card-sub">Have an Ooredoo offer code? Apply it to this upgrade.</p>' +
+          '<p class="card-sub">Have an offer code? Apply it to this upgrade.</p>' +
           '<div class="field inline-field" style="margin-top:12px">' +
             '<input id="promo-input" type="text" autocomplete="off" placeholder="Enter code" value="' +
               esc(S.promo.attempted || '') + '">' +
@@ -497,7 +497,7 @@
         '</div>' +
         '<button class="btn btn-primary" data-act="upgrade-confirm">Confirm upgrade</button>' +
         '<button class="btn btn-ghost" data-act="go" data-route="/plans">Keep comparing plans</button>' +
-        '<p class="kv-note">Your Nojoom points balance is not affected by a plan change.</p>' +
+        '<p class="kv-note">Your reward points balance is not affected by a plan change.</p>' +
       '</div><div class="bottom-space"></div>';
   }
 
@@ -546,7 +546,7 @@
             '<span class="v">' + OOD.qar(up.payable) + '</span></div>' +
         '</div>' +
         '<div class="note green">' + ui.icon('shield', 18) +
-          '<span>No activation fee and no tax. Your Nojoom points balance is unchanged.</span></div>' +
+          '<span>No activation fee and no tax. Your reward points balance is unchanged.</span></div>' +
         '<button class="btn btn-primary" data-act="go" data-route="/">Back to Home</button>' +
         '<button class="btn btn-ghost" data-act="go" data-route="/bill">View my bill</button>' +
       '</div><div class="bottom-space"></div>';
@@ -617,8 +617,8 @@
         '</div>' +
 
         '<div class="rows">' +
-          row('bill', 'Bill history', 'Last 12 months of Ooredoo bills', 'bill-history', null) +
-          row('wallet', 'Pay with Nojoom points', Number(p.nojoom_points).toLocaleString('en-US') +
+          row('bill', 'Bill history', 'Last 12 months of bills', 'bill-history', null) +
+          row('wallet', 'Pay with reward points', Number(p.nojoom_points).toLocaleString('en-US') +
               ' points available', 'go', { route: '/nojoom' }) +
           row('data', 'What used my data', 'Open My Usage for this cycle', 'go', { route: '/usage' }) +
         '</div>' +
@@ -669,8 +669,8 @@
 
     html += '</div><div class="pad" style="margin-top:14px">' +
       '<div class="rows">' +
-        row('call', 'Call Ooredoo Care', 'Dial ' + CFG.SUPPORT_LINE + ' free from your mobile', 'call-111', null) +
-        row('plans', 'Compare plans', 'Shahry, Qatarna+, Home+ and Family Share', 'go', { route: '/plans' }) +
+        row('call', 'Call Customer Care', 'Dial ' + CFG.SUPPORT_LINE + ' free from your mobile', 'call-111', null) +
+        row('plans', 'Compare plans', 'Monthly, Plus, Home+ and Family Share', 'go', { route: '/plans' }) +
         row('data', 'My Usage', 'Data, calls and SMS for this cycle', 'go', { route: '/usage' }) +
       '</div>' +
     '</div><div class="bottom-space"></div>';
@@ -696,10 +696,10 @@
       '<div class="pad">' +
         '<div class="search-bar">' + ui.icon('search', 19) +
           '<input id="search-input" type="search" autocomplete="off" ' +
-            'placeholder="Search Shahry, Qatarna+, GB or price" value="' + esc(S.searchQuery) + '">' +
+            'placeholder="Search Monthly, Plus, GB or price" value="' + esc(S.searchQuery) + '">' +
           '<button class="clear" data-act="search-clear" aria-label="Clear">&#215;</button>' +
         '</div>' +
-        '<p class="kv-note" style="margin-top:10px">Try &ldquo;60 GB&rdquo;, &ldquo;Qatarna&rdquo; ' +
+        '<p class="kv-note" style="margin-top:10px">Try &ldquo;60 GB&rdquo;, &ldquo;Plus&rdquo; ' +
           'or &ldquo;family&rdquo;.</p>' +
       '</div>' +
       '<div class="pad stack" id="search-results" style="margin-top:6px">' + searchResultsHtml() + '</div>' +
@@ -709,7 +709,7 @@
   function searchResultsHtml() {
     var q = S.searchQuery;
     if (!String(q).trim()) {
-      return '<div class="empty">Search the full Ooredoo postpaid range &mdash; Shahry, Qatarna+, ' +
+      return '<div class="empty">Search the full postpaid range &mdash; Monthly, Plus, ' +
              'Data Add-On, Home+ and Family Share.</div>';
     }
     var res = searchMatches(q);
@@ -734,18 +734,18 @@
   /* Nojoom — "/nojoom"                                                      */
   /* ====================================================================== */
 
-  function viewNojoom() {
+  function viewRewards() {
     var p = S.persona;
     var tiers = ['Basic', 'Silver', 'Gold', 'Red'];
     var idx = tiers.indexOf(p.nojoom_label);
-    return ui.pageHeader('Nojoom') +
+    return ui.pageHeader('Rewards') +
       '<div class="pad stack">' +
         '<div class="nojoom-hero">' +
           '<div style="font-size:12px;letter-spacing:.6px;text-transform:uppercase;opacity:.9;' +
-            'font-weight:700">Nojoom points</div>' +
+            'font-weight:700">reward points</div>' +
           '<div class="pts" style="margin-top:8px">' + Number(p.nojoom_points).toLocaleString('en-US') +
             '<small>points</small></div>' +
-          '<span class="tier">' + ui.icon('star', 14) + ' Nojoom ' + esc(p.nojoom_label) + '</span>' +
+          '<span class="tier">' + ui.icon('star', 14) + ' Rewards ' + esc(p.nojoom_label) + '</span>' +
           '<div class="tier-track">' + tiers.map(function (t, i) {
             return '<i class="' + (i <= idx ? 'on' : '') + '"></i>';
           }).join('') + '</div>' +
@@ -755,12 +755,12 @@
         '</div>' +
         '<div class="rows">' +
           row('wallet', 'Pay your bill with points', '100 points = ' + OOD.qar(1, 0), 'redeem', null) +
-          row('gift', 'Nojoom partner offers', 'Dining, travel and retail across Qatar', 'redeem', null) +
+          row('gift', 'Rewards partner offers', 'Dining, travel and retail across Qatar', 'redeem', null) +
           row('data', 'Swap points for data', '2,500 points = 5 GB local data', 'redeem', null) +
         '</div>' +
         '<div class="note">' + ui.icon('info', 18) +
-          '<span>Nojoom points are earned on every Ooredoo bill and never expire while your ' +
-          'line is active. Higher Shahry plans earn points faster.</span></div>' +
+          '<span>Reward points are earned on every bill and never expire while your ' +
+          'line is active. Higher plans earn points faster.</span></div>' +
         ui.supportStrip() +
       '</div><div class="bottom-space"></div>';
   }
@@ -783,7 +783,7 @@
               '<div style="font-size:12.5px;color:var(--muted);margin-top:2px">' +
                 esc(p.msisdn) + ' &#183; ' + esc(p.current_plan_name) + '</div>' +
             '</span>' +
-            '<span class="badge gold">Nojoom ' + esc(p.nojoom_label) + '</span>' +
+            '<span class="badge gold">Rewards ' + esc(p.nojoom_label) + '</span>' +
           '</div>' +
           '<div class="uid-preview" style="margin-top:14px">' +
             '<div class="k">Signed in as</div><div class="v">' + esc(S.user.userId) + '</div>' +
@@ -793,21 +793,21 @@
           row('data', 'My Usage', 'Data, calls and SMS for this cycle', 'go', { route: '/usage' }) +
           row('bill', 'My Bill', OOD.billPeriod() + ' &#183; ' +
               OOD.qar(p.current_plan_qar + p.overage_charge_qar, 0), 'go', { route: '/bill' }) +
-          row('plans', 'Manage plan', 'Upgrade your Shahry or Qatarna+ plan', 'go', { route: '/plans' }) +
+          row('plans', 'Manage plan', 'Upgrade your Monthly or Plus plan', 'go', { route: '/plans' }) +
           row('search', 'Search plans', 'Find a plan by name, GB or price', 'go', { route: '/search' }) +
-          row('gift', 'Nojoom rewards', 'Points, tier and redemptions', 'go', { route: '/nojoom' }) +
-          row('help', 'Help &amp; support', 'Articles and Ooredoo Care', 'go', { route: '/help' }) +
+          row('gift', 'Rewards', 'Points, tier and redemptions', 'go', { route: '/nojoom' }) +
+          row('help', 'Help &amp; support', 'Articles and Customer Care', 'go', { route: '/help' }) +
         '</div>' +
         '<div class="rows">' +
           row('roam', 'Roaming guide', 'Discover before you travel', 'soon', null) +
           row('sim', 'SIM management', 'eSIM, PUK retrieval and SIM swap', 'soon', null) +
-          row('tv', 'Ooredoo TV', 'Manage your entertainment package', 'soon', null) +
+          row('tv', 'TV+', 'Manage your entertainment package', 'soon', null) +
         '</div>' +
         '<div class="rows">' +
-          row('call', 'Call Ooredoo Care', 'Dial ' + CFG.SUPPORT_LINE + ' free from your mobile', 'call-111', null) +
+          row('call', 'Call Customer Care', 'Dial ' + CFG.SUPPORT_LINE + ' free from your mobile', 'call-111', null) +
           row('logout', 'Log out', 'Ends this demo session', 'logout', null) +
         '</div>' +
-        '<p class="kv-note">Ooredoo Q.P.S.C. &#183; demo build v7.4.1 &#183; no real account data.</p>' +
+        '<p class="kv-note">Gen App &#183; demo build v7.4.1 &#183; no real account data.</p>' +
       '</div><div class="bottom-space"></div>';
   }
 
@@ -879,7 +879,7 @@
     '/bill': viewBill,
     '/help': viewHelp,
     '/search': viewSearch,
-    '/nojoom': viewNojoom,
+    '/nojoom': viewRewards,
     '/more': viewMore
   };
 
@@ -1313,13 +1313,13 @@
           ui.toast('Bill history is out of scope in this demo build');
           break;
         case 'redeem':
-          ui.toast('Nojoom redemption is out of scope in this demo build');
+          ui.toast('Rewards redemption is out of scope in this demo build');
           break;
         case 'soon':
           ui.toast('Not part of this demo build');
           break;
         case 'call-111':
-          ui.toast('Dialling ' + CFG.SUPPORT_LINE + ' — Ooredoo Care');
+          ui.toast('Dialling ' + CFG.SUPPORT_LINE + ' — Customer Care');
           break;
         case 'notifications':
           ui.toast('No new notifications');
