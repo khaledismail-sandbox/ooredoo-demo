@@ -1,7 +1,6 @@
 /* ==========================================================================
-   Ooredoo Qatar demo — UI kit
-   Brand mark + wordmark (inline SVG, geometry traced from the real app icon
-   and wordmark), icon set, status bar, headers, tab bar, toast.
+   Gen App demo — UI kit (Amplitude theme)
+   Brand mark + wordmark (inline SVG), icon set, status bar, headers, tab bar, toast.
    ========================================================================== */
 (function () {
   'use strict';
@@ -11,47 +10,31 @@
   var ui = OOD.ui = {};
 
   /* ------------------------------------------------------------ brand mark
-     Traced from the Ooredoo Qatar app icon (512 px artboard):
-       ring  cx 215  cy 286  mid-radius 108  stroke 58
-       dot   cx 388  cy 128  r 47.5
-     Tight viewBox so the lockup aligns optically.                          */
+     "Gen App" mark: a solid Amplitude-blue disc with a white peak-and-wave
+     glyph (Amplitude-style). Square viewBox so the lockup aligns optically. */
   ui.logoMark = function (size, colour) {
     var h = size || 24;
-    var w = Math.round(h * (364 / 349));
     var c = colour || 'var(--ood-red)';
-    return '<svg class="brand-mark" width="' + w + '" height="' + h + '" viewBox="76 78 364 349" ' +
+    return '<svg class="brand-mark" width="' + h + '" height="' + h + '" viewBox="0 0 100 100" ' +
       'fill="none" aria-hidden="true" focusable="false">' +
-      '<circle cx="215" cy="286" r="108" stroke="' + c + '" stroke-width="58"/>' +
-      '<circle cx="388" cy="128" r="47.5" fill="' + c + '"/>' +
+      '<circle cx="50" cy="50" r="50" fill="' + c + '"/>' +
+      '<path d="M18 66 C30 66 36 60 42 44 C46 32 49 24 52 24 C55 24 58 34 62 50 C66 64 70 70 82 70" ' +
+      'stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path d="M18 66 L82 66" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity=".55"/>' +
       '</svg>';
   };
 
   /* -------------------------------------------------------------- wordmark
-     "ooredoo" built geometrically (the real wordmark is a rounded geometric
-     lowercase): bowls are 26-weight rings of mid-radius 50 on a 126-unit
-     x-height, baseline 170, ascender top 8.                                */
+     "Gen App" set in the system sans, bold, tight tracking.                 */
   ui.logoWord = function (height, colour) {
     var h = height || 18;
-    var w = Math.round(h * (868 / 200));
-    var c = colour || 'var(--ood-red)';
-    var bowls = [63, 197, 671, 805];   // o o … o o
-    var out = '<svg class="brand-word" width="' + w + '" height="' + h + '" viewBox="0 0 868 200" ' +
-      'fill="none" aria-label="ooredoo" role="img">';
-    for (var i = 0; i < bowls.length; i++) {
-      out += '<circle cx="' + bowls[i] + '" cy="107" r="50" stroke="' + c + '" stroke-width="26"/>';
-    }
-    /* r */
-    out += '<path d="M281 157 L281 107 A50 50 0 0 1 331 57" stroke="' + c +
-           '" stroke-width="26" stroke-linecap="round"/>';
-    /* e — ring open at the lower right, with a full-weight crossbar */
-    out += '<path d="M459 107 A50 50 0 1 0 447.3 139.1" stroke="' + c +
-           '" stroke-width="26" stroke-linecap="butt"/>';
-    out += '<path d="M346 107 L459 107" stroke="' + c + '" stroke-width="26" stroke-linecap="butt"/>';
-    /* d — bowl plus ascender stem */
-    out += '<circle cx="537" cy="107" r="50" stroke="' + c + '" stroke-width="26"/>';
-    out += '<path d="M587 21 L587 157" stroke="' + c + '" stroke-width="26" stroke-linecap="round"/>';
-    out += '</svg>';
-    return out;
+    var w = Math.round(h * (370 / 100));
+    var c = colour || 'var(--ink)';
+    return '<svg class="brand-word" width="' + w + '" height="' + h + '" viewBox="0 0 370 100" ' +
+      'role="img" aria-label="Gen App">' +
+      '<text x="0" y="80" fill="' + c + '" font-family="-apple-system, BlinkMacSystemFont, ' +
+      '&quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="92" ' +
+      'font-weight="800" letter-spacing="-3">Gen App</text></svg>';
   };
 
   ui.brand = function (markSize, wordHeight) {

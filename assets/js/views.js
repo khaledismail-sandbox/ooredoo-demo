@@ -174,7 +174,7 @@
       '<div class="login-wrap">' +
         '<div class="login-hero">' +
           ui.brand(34, 26) +
-          '<h1>Log in to Ooredoo Qatar</h1>' +
+          '<h1>Log in to Gen App</h1>' +
           '<p>Manage your Shahry line, check your usage and redeem Nojoom points.</p>' +
         '</div>' +
         '<div class="field">' +
@@ -193,9 +193,9 @@
           '<button class="btn btn-primary" data-act="login-submit">Log In</button>' +
         '</div>' +
         '<p class="kv-note" style="margin-top:14px;text-align:center">' +
-          'Demo build &#183; no real Ooredoo credentials are used or stored.</p>' +
+          'Demo build &#183; no real credentials are used or stored.</p>' +
         '<div class="login-foot">' +
-          '<span>Ooredoo Q.P.S.C. &#183; Doha, Qatar</span>' +
+          '<span>Gen App &#183; powered by Amplitude</span>' +
           '<button class="foot-dot" data-act="foot-dot" role="switch" aria-checked="' +
             (toggleOn ? 'true' : 'false') + '" tabindex="-1"></button>' +
           '<span>v7.4.1</span>' +

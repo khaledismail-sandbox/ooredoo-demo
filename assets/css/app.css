@@ -1,23 +1,23 @@
 /* ==========================================================================
-   Ooredoo Qatar — demo app styling
+   Gen App (Amplitude theme) — demo app styling
    Design tokens sampled from the real Ooredoo Qatar consumer app
    (App Store / Google Play listing for qa.ooredoo.android, Sept 2026):
-     - brand red #ED1C24, pressed #C8102E
+     - brand red #1E61F0, pressed #1449C7
      - white cards, radius ~16px, very soft shadow, on a #F5F6F7 ground
-     - light pink icon tiles (#FDE7E9) holding a red glyph
+     - light pink icon tiles (#E9F0FE) holding a red glyph
      - red "→" row affordances, red "⌄" expanders
      - big red metric numerals with a small grey unit
      - 5-slot bottom tab bar, raised red centre slot
    ========================================================================== */
 
 :root {
-  --ood-red: #ED1C24;
-  --ood-red-dark: #C8102E;
-  --ood-red-tint: #FDE7E9;
-  --ood-red-tint-2: #FFF4F5;
+  --ood-red: #1E61F0;
+  --ood-red-dark: #1449C7;
+  --ood-red-tint: #E9F0FE;
+  --ood-red-tint-2: #F4F7FF;
   --bg: #F5F6F7;
   --card: #FFFFFF;
-  --ink: #1C1C1E;
+  --ink: #13294B;
   --ink-2: #44474D;
   --muted: #8A9099;
   --muted-2: #A7ADB5;
@@ -114,7 +114,7 @@ body {
 
 /* On Home the brand wash starts at the very top of the screen, as in the real
    app — otherwise a pink/grey seam appears under the status bar. */
-.phone.home-wash .statusbar { background: #FEEFF1; }
+.phone.home-wash .statusbar { background: #EEF3FE; }
 
 .screen {
   flex: 1 1 auto;
@@ -151,7 +151,7 @@ body {
 
 .app-header {
   padding: 4px 18px 10px;
-  background: linear-gradient(180deg, #FEEFF1 0%, rgba(245, 246, 247, 0) 100%);
+  background: linear-gradient(180deg, #EEF3FE 0%, rgba(245, 246, 247, 0) 100%);
 }
 
 .app-header-top {
@@ -183,7 +183,7 @@ body {
   height: 7px;
   border-radius: 50%;
   background: var(--ood-red);
-  border: 1.5px solid #FEEFF1;
+  border: 1.5px solid #EEF3FE;
 }
 
 .greeting {
@@ -290,7 +290,7 @@ body {
   position: absolute;
   inset: 0 0 0 auto;
   width: 96px;
-  background: linear-gradient(90deg, rgba(237, 28, 36, 0) 0%, var(--ood-red) 62%, var(--ood-red-dark) 100%);
+  background: linear-gradient(90deg, rgba(30, 97, 240, 0) 0%, var(--ood-red) 62%, var(--ood-red-dark) 100%);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -305,7 +305,7 @@ body {
 
 .nojoom-ribbon {
   margin: 10px 16px 0;
-  background: linear-gradient(95deg, var(--ood-red) 0%, #F4535B 58%, rgba(244, 83, 91, .18) 100%);
+  background: linear-gradient(95deg, var(--ood-red) 0%, #4D85F5 58%, rgba(77, 133, 245, .18) 100%);
   color: #fff;
   border-radius: 12px;
   padding: 9px 14px;
@@ -471,7 +471,7 @@ body {
 }
 .btn-primary { background: var(--ood-red); color: #fff; }
 .btn-primary:active { background: var(--ood-red-dark); }
-.btn-primary[disabled] { background: #E4C6C8; color: #fff; cursor: default; }
+.btn-primary[disabled] { background: #B9CCF7; color: #fff; cursor: default; }
 .btn-outline {
   background: var(--card);
   color: var(--ood-red);
@@ -555,7 +555,7 @@ body {
 .bill-line.flag .v { color: var(--ood-red); }
 
 .offer-banner {
-  background: linear-gradient(100deg, var(--ood-red) 0%, #D4161E 100%);
+  background: linear-gradient(100deg, var(--ood-red) 0%, #1652D8 100%);
   color: #fff;
   border-radius: var(--radius);
   padding: 16px;
@@ -581,7 +581,7 @@ body {
   padding: 10px 18px;
   font-size: 14px;
 }
-.offer-banner .btn:active { background: #F6DEE0; color: var(--ood-red-dark); }
+.offer-banner .btn:active { background: #DCE6FD; color: var(--ood-red-dark); }
 
 /* ---------- usage ---------------------------------------------------- */
 
@@ -601,7 +601,7 @@ body {
   position: absolute;
   inset: 0 auto 0 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, #F4545C, var(--ood-red));
+  background: linear-gradient(90deg, #4D85F5, var(--ood-red));
 }
 .quota-bar .cap {
   position: absolute;
@@ -634,7 +634,7 @@ body {
   gap: 10px;
   align-items: flex-start;
   background: var(--ood-red-tint-2);
-  border: 1px solid #FBDDE0;
+  border: 1px solid #D3E1FD;
   border-radius: var(--radius-sm);
   padding: 12px;
   font-size: 12.5px;
@@ -769,7 +769,7 @@ body {
 .plan-card .reco-line {
   margin-top: 12px;
   background: var(--ood-red-tint-2);
-  border: 1px solid #FBDDE0;
+  border: 1px solid #D3E1FD;
   border-radius: var(--radius-sm);
   padding: 11px 12px;
   font-size: 12.5px;
@@ -864,7 +864,7 @@ body {
   font-size: 15px;
   color: var(--ink);
 }
-.field input:focus { outline: 0; border-color: var(--ood-red); box-shadow: 0 0 0 3px rgba(237, 28, 36, .1); }
+.field input:focus { outline: 0; border-color: var(--ood-red); box-shadow: 0 0 0 3px rgba(30, 97, 240, .1); }
 .field .hint { font-size: 11.5px; color: var(--muted); margin-top: 7px; line-height: 1.45; }
 .field .hint code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -992,7 +992,7 @@ body {
 /* ---------- nojoom -------------------------------------------------- */
 
 .nojoom-hero {
-  background: linear-gradient(140deg, var(--ood-red) 0%, #B80E18 100%);
+  background: linear-gradient(140deg, var(--ood-red) 0%, #0C3AA8 100%);
   border-radius: var(--radius);
   padding: 20px 18px;
   color: #fff;
@@ -1156,7 +1156,7 @@ body {
 }
 .offer-tile h4 { margin: 6px 0 0; font-size: 15px; font-weight: 800; letter-spacing: -.2px; line-height: 1.3; }
 .offer-tile p { margin: 6px 0 0; font-size: 11.5px; line-height: 1.4; opacity: .94; }
-.offer-tile.red { background: linear-gradient(130deg, #ED1C24, #B80E18); }
+.offer-tile.red { background: linear-gradient(130deg, #1E61F0, #0C3AA8); }
 .offer-tile.dark { background: linear-gradient(130deg, #2B2F36, #14171B); }
 .offer-tile.teal { background: linear-gradient(130deg, #0E8C7F, #076157); }
 
@@ -1199,9 +1199,9 @@ body {
   height: 42px;
   margin-top: -14px;
   border-radius: 50%;
-  background: linear-gradient(140deg, #F4545C, var(--ood-red));
+  background: linear-gradient(140deg, #4D85F5, var(--ood-red));
   color: #fff;
-  box-shadow: 0 6px 14px rgba(237, 28, 36, .34);
+  box-shadow: 0 6px 14px rgba(30, 97, 240, .34);
 }
 .tab.centre[aria-current="page"] .t-ico { background: linear-gradient(140deg, var(--ood-red), var(--ood-red-dark)); }
 
