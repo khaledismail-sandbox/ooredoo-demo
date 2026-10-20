@@ -451,7 +451,7 @@
 
   OOD.qar = function (n, dp) {
     var d = dp === undefined ? 2 : dp;
-    return 'QAR ' + Number(n).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+    return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
   };
 
   OOD.num = function (n, dp) {
@@ -513,7 +513,7 @@
                ' GB, over quota in ' + persona.months_over_quota + ' of 3), ' +
                plan.name + ' fits your usage';
     if (persona.overage_charge_qar > 0) {
-      return head + ' and would have saved you QAR ' + persona.overage_charge_qar + '/month.';
+      return head + ' and would have saved you $' + persona.overage_charge_qar + '/month.';
     }
     return head + ' with room to spare.';
   };
